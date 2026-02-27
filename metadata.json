@@ -1,0 +1,5 @@
+{
+  "name": "Voice2Refine AI",
+  "description": "Multilingual voice-to-text tool that transcribes and refines your speech into professional, ready-to-send text using Gemini AI.",
+  "requestFramePermissions": ["microphone"]
+}
