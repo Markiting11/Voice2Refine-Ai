@@ -59,37 +59,37 @@ export const VoiceRecorder: React.FC<VoiceRecorderProps> = ({ onRecordingComplet
   };
 
   return (
-    <div className="flex flex-col items-center gap-6 p-8 bg-white rounded-3xl shadow-xl border border-black/5 w-full max-w-md mx-auto">
-      <div className="text-center space-y-2">
-        <h2 className="text-2xl font-semibold tracking-tight text-zinc-900">
-          {isRecording ? 'Listening...' : isProcessing ? 'Processing...' : 'Ready to Record'}
+    <div className="flex flex-col items-center gap-8 p-10 bg-luxury-card rounded-[2rem] shadow-2xl border border-gold/10 w-full max-w-md mx-auto backdrop-blur-md">
+      <div className="text-center space-y-3">
+        <h2 className="text-2xl font-serif font-bold tracking-wide text-white">
+          {isRecording ? 'Listening...' : isProcessing ? 'Refining...' : 'Voice Capture'}
         </h2>
-        <p className="text-sm text-zinc-500">
-          {isRecording ? 'Tap to stop recording' : isProcessing ? 'AI is refining your voice' : 'Tap the mic to start speaking'}
+        <p className="text-xs uppercase tracking-[0.2em] text-gold/50 font-medium">
+          {isRecording ? 'Speak clearly' : isProcessing ? 'AI Excellence in progress' : 'Tap to begin recording'}
         </p>
       </div>
 
-      <div className="relative flex items-center justify-center w-32 h-32">
+      <div className="relative flex items-center justify-center w-36 h-36">
         {isRecording && (
-          <div className="absolute inset-0 animate-ping rounded-full bg-emerald-400/20" />
+          <div className="absolute inset-0 animate-ping rounded-full bg-gold/10" />
         )}
         <button
           onClick={isRecording ? stopRecording : startRecording}
           disabled={isProcessing}
           className={cn(
-            "relative z-10 w-24 h-24 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg",
+            "relative z-10 w-24 h-24 rounded-full flex items-center justify-center transition-all duration-500 shadow-2xl",
             isRecording 
-              ? "bg-red-500 hover:bg-red-600 scale-110" 
-              : "bg-emerald-500 hover:bg-emerald-600 hover:scale-105",
-            isProcessing && "opacity-50 cursor-not-allowed grayscale"
+              ? "bg-red-900/40 border border-red-500/50 text-red-400 scale-110" 
+              : "bg-gradient-to-br from-gold to-gold-dark text-luxury-black hover:scale-105 shadow-gold/20",
+            isProcessing && "opacity-30 cursor-not-allowed grayscale"
           )}
         >
           {isProcessing ? (
-            <Loader2 className="w-10 h-10 text-white animate-spin" />
+            <Loader2 className="w-10 h-10 animate-spin" />
           ) : isRecording ? (
-            <Square className="w-10 h-10 text-white fill-current" />
+            <Square className="w-10 h-10 fill-current" />
           ) : (
-            <Mic className="w-10 h-10 text-white" />
+            <Mic className="w-10 h-10" />
           )}
         </button>
       </div>

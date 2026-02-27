@@ -1,5 +1,5 @@
 {
-  "name": "Voice2Refine AI",
-  "description": "Multilingual voice-to-text tool that transcribes and refines your speech into professional, ready-to-send text using Gemini AI.",
+  "name": "Voice2Refine AI by Anwar Ali Sehar",
+  "description": "A premium multilingual voice-to-text refinement tool by Anwar Ali Sehar. Professional transcription and AI-powered content polishing.",
   "requestFramePermissions": ["microphone"]
 }

@@ -38,10 +38,10 @@ export const Waveform: React.FC<WaveformProps> = ({ isRecording, stream }) => {
         for (let i = 0; i < bufferLength; i++) {
           barHeight = dataArray[i] / 2;
           
-          // Gradient color
+          // Gold Gradient
           const gradient = ctx.createLinearGradient(0, canvas.height, 0, 0);
-          gradient.addColorStop(0, '#10b981'); // emerald-500
-          gradient.addColorStop(1, '#34d399'); // emerald-400
+          gradient.addColorStop(0, '#996515'); // gold-dark
+          gradient.addColorStop(1, '#D4AF37'); // gold
           
           ctx.fillStyle = gradient;
           ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
